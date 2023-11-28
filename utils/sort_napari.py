@@ -62,12 +62,18 @@ if __name__=='__main__':
         help="Name of the image folder.")
     parser.add_argument("-m", "--masks", type=str, default=None,
         help="Name of the mask folder.")
+    parser.add_argument("-c", "--chromos", type=str, default=None,
+        help="Name of the mask folder.")
     args = parser.parse_args()
 
     paths_lab = [args.masks]
+    list_names = ["mask"]
+    if args.chromos is not None:
+        paths_lab += [args.chromos]
+        list_names += ["chromos"]
     path_raw =  args.images
 
-    list_names = ["Labels", ]
+    
 
     list_abs = [abs_listdir(p) for p in paths_lab]
 

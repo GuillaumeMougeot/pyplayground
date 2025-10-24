@@ -1,4 +1,6 @@
 data/*_htr*
+data/test
+data/erda
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
